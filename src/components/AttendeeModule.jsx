@@ -1,6 +1,4 @@
-import personBody from '../assets/icons/person-body.svg'
-import personHead from '../assets/icons/person-head.svg'
-import personDetail from '../assets/icons/person-detail.svg'
+import personPortal from '../assets/icons/person-portal.svg'
 import logicArrow from '../assets/icons/logic-arrow.svg'
 import addCircle from '../assets/icons/add-circle.svg'
 import computer from '../assets/icons/computer.svg'
@@ -39,13 +37,7 @@ export default function AttendeeModule() {
       <div className="attendee-module__header">
         <span className="person-portal" aria-hidden="true">
           <span className="person-portal__layer person-portal__layer--body">
-            <img src={personBody} alt="" />
-          </span>
-          <span className="person-portal__layer person-portal__layer--head">
-            <img src={personHead} alt="" />
-          </span>
-          <span className="person-portal__layer person-portal__layer--detail">
-            <img src={personDetail} alt="" />
+            <img src={personPortal} alt="" />
           </span>
         </span>
         <h3 id="attendee-heading" className="attendee-module__heading">
@@ -93,7 +85,7 @@ export default function AttendeeModule() {
         <p className="step__header">
           <strong>Step 3:</strong> Design post-registration experiences.
         </p>
-        <div className="single-card-row">
+        <div className="card-grid">
           <Card
             variant="workflow"
             icon={computer}

@@ -6,38 +6,28 @@
 }
 
 .sidebar {
-  position: sticky;
-  top: 0;
   display: flex;
-  align-items: stretch;
   flex: 0 0 auto;
   height: 100vh;
-  background: var(--rf-color-surface);
+  background: var(--rf-white);
 }
 
 .rail {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  width: var(--rf-rail-width);
-  padding: 12px 7.5px;
-  background: var(--rf-color-surface);
+  padding: 12px 8px;
+  background: var(--rf-white);
   border-left: 1px solid var(--rf-color-border);
   border-right: 1px solid var(--rf-color-border);
 
   &__logo {
-    display: flex;
-    align-items: center;
     flex-shrink: 0;
     padding: 8px 0 24px 12px;
-    border-radius: 8px;
     cursor: pointer;
 
     img {
       display: block;
-      flex: 0 0 auto;
       width: 32px;
-      max-width: none;
       height: 32px;
       object-fit: contain;
     }
@@ -48,15 +38,14 @@
     align-items: center;
     flex-shrink: 0;
     padding: 4px 8px 8px;
-    background: var(--rf-color-surface);
-    border-radius: 8px;
+    background: var(--rf-white);
+    border-radius: var(--rf-radius-md);
 
     .rail__org-img {
       flex: 0 0 auto;
       width: 32px;
-      max-width: none;
       height: 32px;
-      border-radius: 4px;
+      border-radius: var(--rf-radius-sm);
       object-fit: cover;
     }
   }
@@ -67,7 +56,7 @@
     flex-shrink: 0;
     margin-top: auto;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: var(--rf-radius-md);
   }
 
   &__avatar {
@@ -78,7 +67,7 @@
     height: 32px;
     background: var(--rf-color-avatar-bg);
     border-radius: 100px;
-    color: var(--rf-color-text-on-dark);
+    color: var(--rf-white);
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.02em;
@@ -89,13 +78,11 @@
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    flex-shrink: 0;
     width: 36px;
     height: 36px;
     background: transparent;
     border: 0;
-    border-radius: 4px;
-    color: var(--rf-color-text-strong);
+    border-radius: var(--rf-radius-sm);
     cursor: pointer;
     transition: background-color var(--rf-transition-base);
     -webkit-tap-highlight-color: var(--rf-color-primary-soft);
@@ -113,15 +100,14 @@
 .sidebar-panel {
   display: flex;
   flex-direction: column;
-  width: var(--rf-sidebar-content-width);
+  min-width: var(--rf-sidebar-content-width);
   padding: 12px 8px;
-  background: var(--rf-color-surface);
+  background: var(--rf-white);
   border-right: 1px solid var(--rf-color-border);
 
   &__event-title {
     @include rf-nav-text;
     padding: 8px 8px 12px;
-    color: var(--rf-color-text-heading);
   }
 
   &__event-meta {
@@ -145,7 +131,7 @@
 
   &__search-wrap {
     width: 100%;
-    padding: 0 8px 0;
+    padding: 0 8px;
   }
 
   &__search {
@@ -156,7 +142,7 @@
     padding: 6px 4px;
     background: var(--rf-color-search-bg);
     border: 0;
-    border-radius: 4px;
+    border-radius: var(--rf-radius-sm);
 
     .search-icon {
       display: inline-block;
@@ -186,7 +172,6 @@
   &__nav {
     display: flex;
     flex-direction: column;
-    gap: 0;
     width: 100%;
   }
 }
@@ -194,7 +179,6 @@
 .mega-nav {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   width: 100%;
 }
 
@@ -205,8 +189,8 @@
   gap: 12px;
   width: 100%;
   padding: 8px 12px;
-  background: var(--rf-color-surface);
-  border-radius: 8px;
+  background: var(--rf-white);
+  border-radius: var(--rf-radius-md);
   text-align: left;
   cursor: pointer;
   transition: background-color var(--rf-transition-base);
@@ -240,7 +224,6 @@
 .nav-sub-list {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   margin: 0;
   padding: 4px 12px 12px 48px;
   list-style: none;
@@ -248,7 +231,6 @@
 
 .nav-sub-item {
   display: flex;
-  align-items: stretch;
 
   button {
     @include rf-nav-text;
@@ -262,7 +244,7 @@
     transition: color var(--rf-transition-base);
 
     &:hover {
-      color: var(--rf-color-text-strong);
+      color: var(--rf-color-text-heading);
     }
   }
 }

@@ -6,14 +6,11 @@
   --rf-color-primary-soft-hover: rgba(92, 0, 220, 0.14);
 
   // Surface
-  --rf-color-surface: #ffffff;
-  --rf-color-app-bg: #ffffff;
+  --rf-white: #ffffff;
   --rf-color-search-bg: #f5f5f5;
   --rf-color-avatar-bg: #444444;
   --rf-color-icon-circle: #767676;
   --rf-color-logo-bg: #f3ead3;
-  --rf-color-text-on-primary: #ffffff;
-  --rf-color-text-on-dark: #ffffff;
   --rf-color-overlay-soft: rgba(0, 0, 0, 0.04);
 
   // Borders & dividers
@@ -23,17 +20,19 @@
   --rf-color-text-heading: #222222;
   --rf-color-text-body: #393551;
   --rf-color-text-muted: #767676;
-  --rf-color-text-strong: #444444;
   --rf-color-text-placeholder: #777777;
 
   // Layout
-  --rf-rail-width: 63px;
   --rf-sidebar-content-width: 215px;
   --rf-content-max-width: 1073px;
 
   // Typography
   --rf-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+
+  // Radius
+  --rf-radius-sm: 4px;
+  --rf-radius-md: 8px;
 
   // Motion
   --rf-transition-base: 120ms ease-in-out;

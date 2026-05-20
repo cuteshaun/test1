@@ -1,5 +1,4 @@
-// Desktop default = Figma at 1447px
-// <=1120: desktop padding compression + Step 1 items become equal-share
+// <=1120: desktop padding compression
 // <=1000: sidebar becomes mobile top nav
 // <=768: Step 1 horizontal blocks stack
 // <=600: mobile spacing and header sizing
@@ -25,12 +24,6 @@
   .step-row-card {
     &__item {
       flex: 1 1 0;
-      min-width: 0;
-    }
-
-    &__desc {
-      width: auto;
-      max-width: 100%;
     }
   }
 }
@@ -41,9 +34,7 @@
   }
 
   .sidebar {
-    position: relative;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; 
     height: auto;
   }
 
@@ -52,7 +43,6 @@
     align-items: center;
     gap: 8px;
     width: 100%;
-    height: auto;
     padding: 12px 24px;
     border-left: 0;
     border-bottom: 1px solid var(--rf-color-border);
@@ -78,9 +68,7 @@
 
   .sidebar-panel {
     display: none;
-    width: 100%;
     padding: 12px 16px 16px;
-    background: var(--rf-color-surface);
     border-right: 0;
     border-bottom: 1px solid var(--rf-color-border);
 
@@ -97,27 +85,13 @@
   .main-content {
     gap: 32px;
     padding: 24px;
-
-    > * {
-      max-width: 100%;
-    }
   }
 
   .event-header {
     flex-wrap: wrap;
-    gap: 16px;
-
-    &__title {
-      min-width: 200px;
-    }
-
-    &__edit {
-      order: 3;
-    }
   }
 
-  .card-grid,
-  .single-card-row {
+  .card-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
@@ -125,20 +99,8 @@
 @media (max-width: 768px) {
   .step-row-card {
     flex-direction: column;
-    align-items: stretch;
     gap: 4px;
     padding: 12px 12px;
-
-    &__item {
-      flex: 1 1 auto;
-      width: 100%;
-      padding: 8px;
-    }
-
-    &__desc {
-      width: auto;
-      max-width: 100%;
-    }
   }
 }
 
@@ -163,14 +125,21 @@
   .add-card {
     padding: 20px 24px;
   }
+
+  .rail {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 435px) {
+   .event-header {
+    &__edit {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 360px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
   .main-content {
     padding: 16px 12px;
   }
@@ -193,6 +162,6 @@
 
   .rail {
     gap: 6px;
-    padding: 8px;
+    padding: 8px 16px;
   }
 }

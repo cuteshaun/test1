@@ -28,7 +28,7 @@ export default function Sidebar() {
     >
       <div className="rail">
         <a className="rail__logo" aria-hidden="true" href="#">
-          <img src={rfLogo} alt="" />
+          <img src={rfLogo} alt="RainFocus logo" />
         </a>
         <button
           type="button"
@@ -63,7 +63,7 @@ export default function Sidebar() {
           </svg>
         </button>
         <div className="rail__org" aria-hidden="true">
-          <img src={eventIcon} alt="" className="rail__org-img" />
+          <img src={eventIcon} alt="RainFocus summit event small logo" className="rail__org-img" />
         </div>
         <div className="rail__user">
           <span
@@ -88,7 +88,7 @@ export default function Sidebar() {
           <label className="sidebar-panel__search">
             <img
               src={searchIcon}
-              alt=""
+              alt="Search icon"
               aria-hidden="true"
               className="search-icon"
             />

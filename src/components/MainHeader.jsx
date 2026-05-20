@@ -9,7 +9,7 @@ export default function MainHeader() {
       <div className="event-header__title">
         <h1 className="event-header__name">RainFocus Summit</h1>
         <div className="event-header__meta">
-          <p>December 15th</p>
+          <time dateTime="2026-12-15">December 15th</time>
           <p>Lehi, Utah</p>
         </div>
       </div>
