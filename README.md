@@ -20,6 +20,7 @@ src/
     MainHeader.jsx
     EventSetupGuide.jsx
     AttendeeModule.jsx
+    Card.jsx
   styles/
     main.scss
     _variables.scss
@@ -87,11 +88,10 @@ build/index.html
 ## Responsive behavior
 
 - Desktop matches the 1447 × 1024 Figma frame: 63 px far rail, 215 px sidebar content (278 px total), ~1073 px main content width.
-- At ≤ 1100 the Step 1 row keeps all three blocks in one row by switching items to equal-share with shrinkable descriptions.
-- At ≤ 1000 the sidebar-panel is hidden and a hamburger toggle in the rail reveals it as a slide-down drawer; rail icons stay across the top.
+- At ≤ 1120 the Step 1 row keeps all three blocks in one row by switching items to equal-share with shrinkable descriptions, and outer main-content padding tightens.
+- At ≤ 1000 the sidebar-panel is hidden and a hamburger toggle in the rail reveals it as a slide-down drawer; rail icons stay across the top. The Step 2 / Step 3 card grids switch to `auto-fill, minmax(200px, 1fr)` so cards reflow fluidly from 3 columns down to 1 without explicit narrow-width rules.
 - At ≤ 768 the Step 1 blocks stack vertically and stretch to full row width.
 - At ≤ 600 the event-header logo shrinks and outer paddings tighten.
-- At ≤ 480 cards become a single left-aligned column capped at 360 px.
 - Down to 320 px there is no horizontal overflow, paddings tighten, the **Edit event** button goes full-width.
 
 ## Accessibility
