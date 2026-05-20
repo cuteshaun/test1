@@ -27,8 +27,8 @@ export default function Sidebar() {
       aria-label="Event navigation"
     >
       <div className="rail">
-        <a className="rail__logo" aria-hidden="true" href="#">
-          <img src={rfLogo} alt="RainFocus logo" />
+        <a className="rail__logo" aria-label="RainFocus home" href="/">
+          <img src={rfLogo} alt="" />
         </a>
         <button
           type="button"
@@ -97,7 +97,7 @@ export default function Sidebar() {
               placeholder="Search"
               aria-label="Search"
               defaultValue=""
-              name="Search"
+              name="search"
             />
           </label>
         </div>
