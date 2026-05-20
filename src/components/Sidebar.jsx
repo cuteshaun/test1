@@ -27,9 +27,9 @@ export default function Sidebar() {
       aria-label="Event navigation"
     >
       <div className="rail">
-        <div className="rail__logo" aria-hidden="true">
+        <a className="rail__logo" aria-hidden="true" href="#">
           <img src={rfLogo} alt="" />
-        </div>
+        </a>
         <button
           type="button"
           className="rail__menu-toggle"
@@ -97,6 +97,7 @@ export default function Sidebar() {
               placeholder="Search"
               aria-label="Search"
               defaultValue=""
+              name="Search"
             />
           </label>
         </div>

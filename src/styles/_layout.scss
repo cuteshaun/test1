@@ -160,7 +160,7 @@ a {
     font-weight: 700;
     font-size: 14px;
     line-height: 1.2;
-    transition: background-color 120ms ease-in-out;
+    transition: background-color var(--rf-transition-base);
 
     &:hover {
       background: var(--rf-color-primary-hover);

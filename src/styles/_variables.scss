@@ -13,6 +13,7 @@
   --rf-color-icon-circle: #767676;
   --rf-color-logo-bg: #f3ead3;
   --rf-color-text-on-primary: #ffffff;
+  --rf-color-text-on-dark: #ffffff;
   --rf-color-overlay-soft: rgba(0, 0, 0, 0.04);
 
   // Borders & dividers
@@ -33,4 +34,7 @@
   // Typography
   --rf-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+
+  // Motion
+  --rf-transition-base: 120ms ease-in-out;
 }

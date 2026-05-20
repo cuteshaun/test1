@@ -188,7 +188,8 @@
   justify-content: center;
   gap: 4px;
   padding: 24px 32px;
-  transition: background-color 120ms ease-in-out, border-color 120ms ease-in-out;
+  transition: background-color var(--rf-transition-base),
+    border-color var(--rf-transition-base);
 
   &__icon {
     width: 24px;
