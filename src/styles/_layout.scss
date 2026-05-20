@@ -1,0 +1,187 @@
+// Base + layout
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background-color: var(--rf-color-app-bg);
+}
+
+body {
+  font-family: var(--rf-font-family);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--rf-color-text-heading);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 600;
+  color: var(--rf-color-text-heading);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+// Focus visibility
+:focus-visible {
+  outline: 2px solid var(--rf-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+// Full app shell — sidebar + main content
+.app-shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--rf-color-app-bg);
+}
+
+// Main body that holds header + setup guide + attendee module
+.main-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 48px;
+
+  // Inner content max width
+  > * {
+    width: 100%;
+    max-width: var(--rf-content-max-width);
+  }
+}
+
+// Main header (event logo + title + Edit button)
+.event-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+
+  &__logo {
+    flex: 0 0 auto;
+    width: 95px;
+    height: 95px;
+    border-radius: 8px;
+    background: #f3ead3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__name {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--rf-color-text-heading);
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--rf-color-text-body);
+    font-weight: 400;
+  }
+
+  &__edit {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background: var(--rf-color-primary);
+    color: #ffffff;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    transition: background-color 120ms ease-in-out;
+
+    &:hover {
+      background: var(--rf-color-primary-hover);
+    }
+  }
+}
+
+// Event setup guide section
+.setup-guide {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--rf-color-text-heading);
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--rf-color-text-body);
+  }
+}

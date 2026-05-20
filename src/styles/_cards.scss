@@ -1,0 +1,225 @@
+// Attendee module + step cards
+
+.attendee-module {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-top: 1px solid var(--rf-color-border);
+  padding-top: 24px;
+  gap: 24px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__heading {
+    flex: 1 1 0;
+    min-width: 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--rf-color-text-heading);
+  }
+}
+
+// Attendee header icon — 3 layered SVGs sized via inset percentages on wrappers,
+// matching the Figma component structure exactly.
+.person-portal {
+  position: relative;
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+
+  &__layer {
+    position: absolute;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--body {
+      top: -0.33%;
+      right: 23.87%;
+      bottom: 22.86%;
+      left: -0.01%;
+    }
+
+    &--head {
+      top: 37.89%;
+      right: 0;
+      bottom: 0;
+      left: 37.89%;
+    }
+
+    &--detail {
+      top: 40.97%;
+      right: 23.85%;
+      bottom: 22.86%;
+      left: 37.88%;
+    }
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__header {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--rf-color-text-strong);
+    line-height: 1.2;
+
+    strong {
+      color: var(--rf-color-text-heading);
+      font-weight: 700;
+    }
+  }
+}
+
+// Step 1: one wide bordered row containing three left-aligned blocks
+.step-row-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  background: var(--rf-color-surface);
+  border: 1px solid var(--rf-color-border);
+  border-radius: 4px;
+  padding: 16px 24px;
+  min-height: 120px;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px;
+    flex: 0 0 auto;
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rf-color-text-heading);
+    line-height: 1.2;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--rf-color-text-body);
+    width: 205px;
+  }
+}
+
+// Step 2: rows of cards
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 24px;
+  width: 100%;
+}
+
+.workflow-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--rf-color-surface);
+  border: 1px solid var(--rf-color-border);
+  border-radius: 4px;
+  padding: 24px 32px;
+  min-height: 120px;
+  transition: box-shadow 120ms ease-in-out, border-color 120ms ease-in-out;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--rf-color-text-heading);
+    line-height: 1.2;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--rf-color-text-body);
+  }
+}
+
+.add-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--rf-color-surface);
+  border: 1px solid var(--rf-color-border);
+  border-radius: 4px;
+  padding: 24px 32px;
+  min-height: 120px;
+  cursor: pointer;
+  transition: background-color 120ms ease-in-out, border-color 120ms ease-in-out;
+  font-family: inherit;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    color: var(--rf-color-text-heading);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    background: var(--rf-color-primary-soft);
+    border-color: var(--rf-color-primary);
+  }
+}
+
+// Step 3: a single left-aligned card in a 3-column track
+.single-card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}

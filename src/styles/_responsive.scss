@@ -1,0 +1,238 @@
+// Responsive breakpoints
+// Desktop default = matches Figma at 1447 wide
+// <= 1199 tighter outer padding
+// <= 1100 Step 1 row card stops using natural-width items + flex-wrap
+//          (which produced an awkward 2+1 row at ~1096 wide) and switches
+//          to equal-share items with shrinkable descriptions, so all
+//          three blocks stay on one row down to 768
+// <= 1000 the desktop sidebar-panel (event title, search, mega nav) is
+//          hidden. Only the rail remains as a top bar; a hamburger toggle
+//          reveals the panel as a slide-in drawer below the rail.
+// <= 768  Step 1 items finally stack vertically, full-width
+// <= 600  smaller event header and tighter outer padding
+// <= 480  cards collapse to a single left-aligned column capped at 360
+//          so they don't sprawl across the whole viewport
+// <= 360  spacing tightens further; no horizontal overflow
+
+@media (max-width: 1199px) {
+  .main-content {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 1100px) {
+  // Keep all three Step 1 blocks on one row down to 768. We can't keep
+  // the 205px fixed desc width anymore, so items share the row equally
+  // (flex: 1 1 0) and descriptions wrap inside their cells.
+  .step-row-card {
+    &__item {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
+    &__desc {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  // Mobile rail: flatten into a single row.
+  //   [rf-logo]  ............(margin-left: auto on toggle)............  [☰][event-icon][FL]
+  // Logo stays leftmost, hamburger leads the right-hand group of the
+  // event icon + user avatar.
+  .rail {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-left: 0;
+    border-bottom: 1px solid var(--rf-color-border);
+
+    &__logo {
+      padding: 0;
+
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+
+    &__org {
+      padding: 0;
+    }
+
+    &__user {
+      margin-top: 0;
+      padding: 0;
+    }
+  }
+
+  .rail__menu-toggle {
+    display: inline-flex;
+    margin-left: auto; // pushes toggle + everything after it to the right
+  }
+
+  .sidebar-panel {
+    display: none;
+    width: 100%;
+    padding: 12px 16px 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--rf-color-border);
+    background: var(--rf-color-surface);
+
+    &__event-title {
+      padding-top: 0;
+    }
+  }
+
+  .sidebar--open .sidebar-panel {
+    display: flex;
+    animation: rf-panel-slide 160ms ease-out;
+  }
+
+  @keyframes rf-panel-slide {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .main-content {
+    padding: 24px;
+    gap: 32px;
+
+    > * {
+      max-width: 100%;
+    }
+  }
+
+  .event-header {
+    flex-wrap: wrap;
+    gap: 16px;
+
+    &__title {
+      min-width: 200px;
+    }
+
+    &__edit {
+      order: 3;
+    }
+  }
+
+  // auto-FILL (not auto-fit) keeps empty tracks alive so the Step 3
+  // single card stays in column 1 with the same width as the workflow
+  // cards above it. minmax(200px, 1fr) lets two cards survive down to
+  // ~480px viewport before falling back to a single column.
+  .card-grid,
+  .single-card-row {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 20px 16px;
+    gap: 28px;
+  }
+
+  .event-header {
+    &__logo {
+      width: 72px;
+      height: 72px;
+    }
+
+    &__name {
+      font-size: 24px;
+    }
+  }
+
+  .workflow-card,
+  .add-card {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  // Step 1: stack the three blocks vertically and stretch them across
+  // the row width so we don't get a tall card with empty space and huge
+  // horizontal gaps between left-floated children.
+  .step-row-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 12px 16px;
+
+    &__item {
+      width: 100%;
+      flex: 1 1 auto;
+      padding: 8px;
+    }
+
+    &__desc {
+      width: auto;
+      max-width: 100%;
+    }
+  }
+}
+
+// Below 480 there's no room for two columns even with the smaller minmax,
+// so we explicitly collapse to a single column and cap it at 360 to keep
+// the card from sprawling across the viewport. Left-aligned via default
+// grid `justify-content: start`.
+@media (max-width: 480px) {
+  .card-grid,
+  .single-card-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .main-content {
+    padding: 16px 12px;
+  }
+
+  .event-header {
+    &__name {
+      font-size: 20px;
+    }
+
+    &__edit {
+      width: 100%;
+    }
+  }
+
+  .step-row-card,
+  .workflow-card,
+  .add-card {
+    padding: 16px;
+  }
+
+  .rail {
+    padding: 8px;
+    gap: 6px;
+  }
+}
