@@ -146,6 +146,11 @@
     border: 0;
     border-radius: var(--rf-radius-sm);
 
+    &:focus-within {
+      outline: 2px solid var(--rf-color-primary);
+      outline-offset: 2px;
+    }
+
     .search-icon {
       display: inline-block;
       flex: 0 0 auto;
@@ -167,6 +172,10 @@
       &::placeholder {
         color: var(--rf-color-text-placeholder);
         opacity: 1;
+      }
+
+      &:focus {
+        outline: none;
       }
     }
   }
