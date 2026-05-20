@@ -90,8 +90,11 @@ a {
   gap: 40px;
   padding: 40px 48px;
 
-  // Inner content max width
-  > * {
+  // Inner content max width — scoped to the three known children so we
+  // don't accidentally constrain anything else added later.
+  > .event-header,
+  > .setup-guide,
+  > .attendee-module {
     width: 100%;
     max-width: var(--rf-content-max-width);
   }
@@ -108,7 +111,7 @@ a {
     width: 95px;
     height: 95px;
     border-radius: 8px;
-    background: #f3ead3;
+    background: var(--rf-color-logo-bg);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -152,7 +155,7 @@ a {
     justify-content: center;
     padding: 8px 16px;
     background: var(--rf-color-primary);
-    color: #ffffff;
+    color: var(--rf-color-text-on-primary);
     border-radius: 4px;
     font-weight: 700;
     font-size: 14px;

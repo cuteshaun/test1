@@ -4,6 +4,7 @@ import personDetail from '../assets/icons/person-detail.svg'
 import logicArrow from '../assets/icons/logic-arrow.svg'
 import addCircle from '../assets/icons/add-circle.svg'
 import computer from '../assets/icons/computer.svg'
+import Card from './Card.jsx'
 
 const step1Items = [
   { title: 'General', desc: 'Define Attendee types & attributes' },
@@ -72,22 +73,19 @@ export default function AttendeeModule() {
         </p>
         <div className="card-grid">
           {workflowCards.map((card, i) => (
-            <article key={i} className="workflow-card">
-              <div className="workflow-card__header">
-                <span className="workflow-card__icon">
-                  <img src={logicArrow} alt="" aria-hidden="true" />
-                </span>
-                <h4 className="workflow-card__title">{card.title}</h4>
-              </div>
-              <p className="workflow-card__desc">{card.desc}</p>
-            </article>
+            <Card
+              key={i}
+              variant="workflow"
+              icon={logicArrow}
+              title={card.title}
+              description={card.desc}
+            />
           ))}
-          <button type="button" className="add-card">
-            <span className="add-card__icon">
-              <img src={addCircle} alt="" aria-hidden="true" />
-            </span>
-            <span className="add-card__label">Add Registration Workflow</span>
-          </button>
+          <Card
+            variant="add"
+            icon={addCircle}
+            label="Add Registration Workflow"
+          />
         </div>
       </div>
 
@@ -96,18 +94,12 @@ export default function AttendeeModule() {
           <strong>Step 3:</strong> Design post-registration experiences.
         </p>
         <div className="single-card-row">
-          <article className="workflow-card">
-            <div className="workflow-card__header">
-              <span className="workflow-card__icon">
-                <img src={computer} alt="" aria-hidden="true" />
-              </span>
-              <h4 className="workflow-card__title">Attendee Portal</h4>
-            </div>
-            <p className="workflow-card__desc">
-              Manage the portal that attendees will see after they’ve register
-              for your event.
-            </p>
-          </article>
+          <Card
+            variant="workflow"
+            icon={computer}
+            title="Attendee Portal"
+            description="Manage the portal that attendees will see after they’ve register for your event."
+          />
         </div>
       </div>
     </section>

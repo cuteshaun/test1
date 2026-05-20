@@ -1,13 +1,9 @@
-// Color tokens extracted from Figma
 :root {
   // Brand
   --rf-color-primary: #5c00dc;
   --rf-color-primary-hover: #4a00b3;
   --rf-color-primary-soft: rgba(92, 0, 220, 0.08);
   --rf-color-primary-soft-hover: rgba(92, 0, 220, 0.14);
-  --rf-color-pink: #ed1a5d;
-  --rf-color-berry: #e71356;
-  --rf-color-grape-light: #ab99ff;
 
   // Surface
   --rf-color-surface: #ffffff;
@@ -15,7 +11,9 @@
   --rf-color-search-bg: #f5f5f5;
   --rf-color-avatar-bg: #444444;
   --rf-color-icon-circle: #767676;
-  --rf-color-empty-card: #ffffff;
+  --rf-color-logo-bg: #f3ead3;
+  --rf-color-text-on-primary: #ffffff;
+  --rf-color-overlay-soft: rgba(0, 0, 0, 0.04);
 
   // Borders & dividers
   --rf-color-border: #cbc6de;
@@ -27,26 +25,9 @@
   --rf-color-text-strong: #444444;
   --rf-color-text-placeholder: #777777;
 
-  // Spacing scale (px)
-  --rf-space-2: 2px;
-  --rf-space-4: 4px;
-  --rf-space-8: 8px;
-  --rf-space-12: 12px;
-  --rf-space-16: 16px;
-  --rf-space-24: 24px;
-  --rf-space-32: 32px;
-  --rf-space-40: 40px;
-  --rf-space-48: 48px;
-
-  // Radius
-  --rf-radius-sm: 4px;
-  --rf-radius-md: 8px;
-  --rf-radius-pill: 100px;
-
   // Layout
   --rf-rail-width: 63px;
   --rf-sidebar-content-width: 215px;
-  --rf-sidebar-total-width: 278px;
   --rf-content-max-width: 1073px;
 
   // Typography

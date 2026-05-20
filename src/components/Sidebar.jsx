@@ -104,7 +104,7 @@ export default function Sidebar() {
         <nav className="sidebar-panel__nav" aria-label="Main">
           <ul className="mega-nav" role="list">
             {primaryNav.map((item) => (
-              <li key={item.key} className="mega-nav__item">
+              <li key={item.key}>
                 <button
                   type="button"
                   className={`nav-item${item.active ? ' nav-item--active' : ''}`}
@@ -117,12 +117,13 @@ export default function Sidebar() {
                 {item.active && item.children && (
                   <ul className="nav-sub-list" role="list">
                     {item.children.map((child) => (
-                      <li
-                        key={child}
-                        className="nav-sub-item"
-                        onClick={() => setNavOpen(false)}
-                      >
-                        {child}
+                      <li key={child} className="nav-sub-item">
+                        <button
+                          type="button"
+                          onClick={() => setNavOpen(false)}
+                        >
+                          {child}
+                        </button>
                       </li>
                     ))}
                   </ul>

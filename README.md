@@ -87,8 +87,11 @@ build/index.html
 ## Responsive behavior
 
 - Desktop matches the 1447 × 1024 Figma frame: 63 px far rail, 215 px sidebar content (278 px total), ~1073 px main content width.
-- Below ~900 px the sidebar collapses on top of the content (rail + sidebar panel stack vertically above the main area), the Step 2 cards reflow to 2 columns.
-- Below 600 px cards become single column; placeholder empty cards in Step 2 / Step 3 are hidden.
+- At ≤ 1100 the Step 1 row keeps all three blocks in one row by switching items to equal-share with shrinkable descriptions.
+- At ≤ 1000 the sidebar-panel is hidden and a hamburger toggle in the rail reveals it as a slide-down drawer; rail icons stay across the top.
+- At ≤ 768 the Step 1 blocks stack vertically and stretch to full row width.
+- At ≤ 600 the event-header logo shrinks and outer paddings tighten.
+- At ≤ 480 cards become a single left-aligned column capped at 360 px.
 - Down to 320 px there is no horizontal overflow, paddings tighten, the **Edit event** button goes full-width.
 
 ## Accessibility
@@ -97,8 +100,9 @@ build/index.html
 - The Search input has `aria-label="Search"` and an accessible `<label>` wrapper.
 - The selected nav item carries `aria-current="page"`.
 - Decorative icons use `alt=""` / `aria-hidden="true"`; the event logo has meaningful alt text.
-- Focus styles are visible via `:focus-visible`.
+- Focus styles are visible via `:focus-visible`; no element strips its focus outline.
 - Headings follow a single H1 → H2 → H3 → H4 order.
+- Every interactive element is a real `<button>` (primary nav, sub-nav, hamburger toggle, Edit event, Add Registration Workflow) — fully keyboard-reachable and operable via Enter/Space with no custom keydown shims.
 
 ## Title
 

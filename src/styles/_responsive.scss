@@ -148,29 +148,6 @@
   }
 }
 
-@media (max-width: 600px) {
-  .main-content {
-    padding: 20px 16px;
-    gap: 28px;
-  }
-
-  .event-header {
-    &__logo {
-      width: 72px;
-      height: 72px;
-    }
-
-    &__name {
-      font-size: 24px;
-    }
-  }
-
-  .workflow-card,
-  .add-card {
-    padding: 20px 24px;
-  }
-}
-
 @media (max-width: 768px) {
   // Step 1: stack the three blocks vertically and stretch them across
   // the row width so we don't get a tall card with empty space and huge
@@ -191,6 +168,29 @@
       width: auto;
       max-width: 100%;
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding: 20px 16px;
+    gap: 28px;
+  }
+
+  .event-header {
+    &__logo {
+      width: 72px;
+      height: 72px;
+    }
+
+    &__name {
+      font-size: 24px;
+    }
+  }
+
+  .workflow-card,
+  .add-card {
+    padding: 20px 24px;
   }
 }
 

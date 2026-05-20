@@ -1,4 +1,25 @@
-// Attendee module + step cards
+%rf-card-surface {
+  background: var(--rf-color-surface);
+  border: 1px solid var(--rf-color-border);
+  border-radius: 4px;
+}
+
+%rf-card-min-height {
+  min-height: 120px;
+}
+
+@mixin rf-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--rf-color-text-heading);
+  line-height: 1.2;
+}
+
+@mixin rf-card-description {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--rf-color-text-body);
+}
 
 .attendee-module {
   display: flex;
@@ -24,8 +45,6 @@
   }
 }
 
-// Attendee header icon — 3 layered SVGs sized via inset percentages on wrappers,
-// matching the Figma component structure exactly.
 .person-portal {
   position: relative;
   display: inline-block;
@@ -86,15 +105,11 @@
 
 // Step 1: one wide bordered row containing three left-aligned blocks
 .step-row-card {
+  @extend %rf-card-surface;
+  @extend %rf-card-min-height;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
   gap: 32px;
-  background: var(--rf-color-surface);
-  border: 1px solid var(--rf-color-border);
-  border-radius: 4px;
   padding: 16px 24px;
-  min-height: 120px;
   width: 100%;
 
   &__item {
@@ -107,17 +122,14 @@
   }
 
   &__title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--rf-color-text-heading);
-    line-height: 1.2;
+    @include rf-card-title;
   }
 
   &__desc {
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--rf-color-text-body);
-    width: 205px;
+    @include rf-card-description;
+    @media (min-width: 1101px) {
+      width: 205px;
+    }
   }
 }
 
@@ -130,15 +142,12 @@
 }
 
 .workflow-card {
+  @extend %rf-card-surface;
+  @extend %rf-card-min-height;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: var(--rf-color-surface);
-  border: 1px solid var(--rf-color-border);
-  border-radius: 4px;
   padding: 24px 32px;
-  min-height: 120px;
-  transition: box-shadow 120ms ease-in-out, border-color 120ms ease-in-out;
 
   &__header {
     display: flex;
@@ -162,33 +171,24 @@
   }
 
   &__title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--rf-color-text-heading);
-    line-height: 1.2;
+    @include rf-card-title;
   }
 
   &__desc {
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--rf-color-text-body);
+    @include rf-card-description;
   }
 }
 
 .add-card {
+  @extend %rf-card-surface;
+  @extend %rf-card-min-height;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background: var(--rf-color-surface);
-  border: 1px solid var(--rf-color-border);
-  border-radius: 4px;
   padding: 24px 32px;
-  min-height: 120px;
-  cursor: pointer;
   transition: background-color 120ms ease-in-out, border-color 120ms ease-in-out;
-  font-family: inherit;
 
   &__icon {
     width: 24px;
